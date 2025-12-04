@@ -1424,23 +1424,14 @@
                     </div>
                 </div>
                 
-                <!-- Action Buttons -->
+                <!-- Action Button - Discord Only -->
                 <div class="space-y-3">
-                    <p class="text-white font-bold text-center">Pilih cara konfirmasi:</p>
-                    
-                    <!-- Discord Ticket - Primary -->
                     <a id="discordTicketBtn" href="https://discord.gg/28YYkmvm5Y" target="_blank" class="block bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-4 px-6 rounded-xl transition duration-300 flex items-center justify-center gap-3 shadow-lg transform hover:scale-[1.02]">
                         <i class="fab fa-discord text-2xl"></i>
                         <div class="text-left">
-                            <span class="block">Buat Ticket di Discord</span>
-                            <span class="text-xs text-indigo-200 font-normal">Recommended - Proses lebih cepat</span>
+                            <span class="block">Join Discord & Konfirmasi</span>
+                            <span class="text-xs text-indigo-200 font-normal">Klik untuk join server Discord</span>
                         </div>
-                    </a>
-                    
-                    <!-- WhatsApp -->
-                    <a id="waConfirmBtn" href="wa.me/6285185005482" target="_blank" class="block bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl transition duration-300 flex items-center justify-center gap-3">
-                        <i class="fab fa-whatsapp text-2xl"></i>
-                        <span>Konfirmasi via WhatsApp</span>
                     </a>
                 </div>
                 
@@ -2100,10 +2091,6 @@
             document.getElementById('confirmTotal').textContent = formatRupiah(currentOrder.uniqueTotal);
             document.getElementById('confirmMethod').textContent = paymentConfig[currentOrder.method].name;
             
-            // Set WhatsApp link - Simple message
-            const waText = `Konfirmasi Order ${currentOrder.id} - ${currentOrder.username} - ${formatRupiah(currentOrder.uniqueTotal)}`;
-            document.getElementById('waConfirmBtn').href = `https://wa.me/6285185005482?text=${encodeURIComponent(waText)}`;
-            
             // Clear timer
             if (paymentTimerInterval) clearInterval(paymentTimerInterval);
             
@@ -2126,7 +2113,7 @@
 
         // Send Order to Discord & API
         async function sendOrderToDiscord(status) {
-            const discordWebhookURL = 'https://discord.com/api/webhooks/1445917915626082318/BXXRttLL_U_7sLSxi7oUSGRJXdZ8n5YCA2VWgdqdBI5YcGm9Xrh4H5oA8v4Qr6wdhXuk';
+            const discordWebhookURL = 'https://discord.com/api/webhooks/1446174897234509908/9i7nGk3A8LLiXMzVp6Gmbuv_RRFYGi5R8-6s6mzsjoY0WMnDMHuIeFiPuXEHketVk9HM';
             const API_URL = 'http://localhost:3000/api/order'; // URL API bot (jika berjalan)
             
             let itemsList = '';
